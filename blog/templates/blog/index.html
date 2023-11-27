@@ -1,0 +1,13 @@
+<!-- blog/templates/blog/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Добро пожаловать на мой блог!</h1>
+  <h2>Последние статьи</h2>
+  {% for article in articles %}
+    <div>
+      <h3><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h3>
+      <p>{{ article.content }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
